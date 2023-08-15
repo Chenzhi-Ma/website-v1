@@ -3,17 +3,6 @@ import streamlit as st
 
 # Import the necessary packages
 import streamlit as st
-# Data related packages
-import pandas as pd
-import numpy as np
-import math
-# File related packages
-from io import StringIO
-import os
-
-
-# import our database
-from functions import column_cost, floor_system_cost
 import pandas as pd
 import numpy as np
 import scipy.io
@@ -313,8 +302,8 @@ def astm_index():
             ('type value', 'upload file with given format'))
         if astm_index_method == 'type value':
 
-            Construction_cost_alt = st.number_input("Input initial construction cost for alternative design")
-            Construction_cost_ref = st.number_input("Input initial construction cost for reference design")
+            CI_alt = st.number_input("Input initial construction cost for alternative design")
+            CI_ref = st.number_input("Input initial construction cost for reference design")
             DD_alt = st.number_input("Input direct damage loss for alternative design")
             DD_ref = st.number_input("Input direct damage loss cost for reference design")
             ID_alt = st.number_input("Input indirect damage loss for alternative design")
@@ -323,6 +312,16 @@ def astm_index():
             CM_ref = st.number_input("Input maintenance cost  for reference design")
             CB_alt = st.number_input("Input co-benefit for alternative design")
             CB_ref = st.number_input("Input co-benefit cost for reference design")
+
+            net_b = DD_ref + ID_ref-CB_ref - DD_alt - ID_alt + CB_alt
+            net_c = -CI_ref - CM_ref + CI_alt + CM_alt
+            pvlcc = [0, 0]  # Initialize the list
+
+            pvlcc[0] = CI_ref + CM_ref + DD_ref + ID_ref - CB_ref
+            pvlcc[1] = CI_ref + CM_ref + DD_alt + ID_alt - CB_alt
+
+            bcr = net_b / net_c
+            pnv = net_b - net_c
 
 
         if astm_index_method == 'upload file with given format':
