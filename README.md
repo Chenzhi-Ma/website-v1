@@ -2,7 +2,7 @@
 
 required package: 
 
-pip install stream  
+pip install streamlit  
 pip install pandas    
 pip install scipy  
 
@@ -12,4 +12,5 @@ Download the code to a folder, open jupyter notebook
 Select 'new-terminal'    
 Input "streamlit run main.py" in the terminal  
 2. Through windows command  
-Input "python.exe streamlit run 'path\main.py'  "
+Input "cd /d path " to navigate to the downloaded folder
+Input "python.exe streamlit run 'path\main.py'  " to run the script.  
