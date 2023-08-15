@@ -42,19 +42,9 @@ totalcost_ori = totalcost_mat['totalcost_num']
 def read_database():
     # Import the necessary packages
     import streamlit as st
-    # Data related packages
     import pandas as pd
-    import numpy as np
-    import math
-    # File related packages
-    from io import StringIO
-    import os
 
-    # import our database
-    from functions import column_cost, floor_system_cost
-    import pandas as pd
-    import numpy as np
-    import scipy.io
+
     import matplotlib.pyplot as plt
     # Set up the header
     st.header("Economic impact of performance-based structural fire design")
