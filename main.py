@@ -44,8 +44,6 @@ def read_database():
     import streamlit as st
     import pandas as pd
 
-
-    import matplotlib.pyplot as plt
     # Set up the header
     st.header("Economic impact of performance-based structural fire design")
     with st.sidebar:
