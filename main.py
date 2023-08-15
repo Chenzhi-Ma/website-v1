@@ -5,13 +5,16 @@ import streamlit as st
 import streamlit as st
 import pandas as pd
 import numpy as np
-import scipy.io
-import math
-import matplotlib.pyplot as plt
+import pickle
+
+with open('database_ori_mat.pkl', 'rb') as f:
+    database_ori_mat = pickle.load(f)
+with open('totalcost_mat.pkl', 'rb') as f:
+    totalcost_mat = pickle.load(f)
+
 
 
 # import the matlab file .mat, database_original.mat is a 1*1 struct with 7 fields, inlcude all the original data from 130 simulaitons
-database_ori_mat = scipy.io.loadmat('database_original.mat')
 database_ori = database_ori_mat['database_original']
 
 # get the detailed original value from rsmeans
@@ -34,7 +37,6 @@ building_information_ori = building_information_ori_mat[0, 0]
 # 3 - 4 columns: rsmeans value minus the floor system cost, column system cost
 # 5 - 6 columns: value with adjusted floor system and columns, fire rating is based on IBC coding
 
-totalcost_mat = scipy.io.loadmat('building_total_cost.mat')
 totalcost_ori = totalcost_mat['totalcost_num']
     # define new vlue in the database
 def read_database():
