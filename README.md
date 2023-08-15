@@ -11,5 +11,5 @@ pip install scipy
 Download the code to a folder, open jupyter notebook    
 Select 'new-terminal'    
 Input "streamlit run main.py" in the terminal  
-2. Through windows command
+2. Through windows command  
 Input "python.exe streamlit run 'path\main.py'  "
