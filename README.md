@@ -8,8 +8,8 @@ pip install scipy
 
 # how to run
 1. Through jupyter notebook:  
-Download the code to a folder, open jupyter notebook    
-Select 'new-terminal'    
+Download the code as zip, un-zip to a folder, open jupyter notebook and navigate to this folder      
+At the top right side select 'new-terminal'    
 Input "streamlit run main.py" in the terminal  
 2. Through windows command  
 Input "cd /d path " to navigate to the downloaded folder  
