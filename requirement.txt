@@ -5,3 +5,4 @@ scipy
 math
 matplotlib
 pickle
+matplotlib.pyplot
